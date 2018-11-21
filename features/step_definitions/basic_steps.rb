@@ -3,11 +3,18 @@ When("I visit the {string}") do |page_path|
     visit page_path
 end
 
-Then("I should be able to fill in {string} with {string}") do |field, content|
-    fill_in field, with: 'content'
+Then("I should be able to fill in {string} with {string}") do |input_field, input_value|
+    fill_in input_field, with: input_value
 end
 
-Then("I should be able to click {string} button to submit form") do |button|
-    click_on button
+When("I click {string} to submit form") do |value|
+    click_on value
 end
   
+Then("I should be redirected to {string} page") do |string|
+    pending # Write code here that turns the phrase above into concrete actions
+end
+  
+Then("I should see the message {string}") do |string|
+    pending # Write code here that turns the phrase above into concrete actions
+end

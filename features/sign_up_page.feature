@@ -4,11 +4,12 @@ Feature: Sign Up Page
     In order sign up to CA Mailboxer
     I want to be able to visit a sign up page and create an account
 
-Scenario: Submit sign up form
+Scenario: Submit sign up form [Happy path]
     When I visit the "/users/sign_up"
     Then I should be able to fill in "Name" with "Camron"
     And I should be able to fill in "Email" with "camron@heroku.com"
     And I should be able to fill in "Password" with "camron1234"
     And I should be able to fill in "Password confirmation" with "camron1234"
-    And I should be able to click "Create" button to submit form
-    
+    When I click "Create" to submit form
+    Then I should be redirected to "/" page
+    And I should see the message "Welcome! You have signed up successfully."
