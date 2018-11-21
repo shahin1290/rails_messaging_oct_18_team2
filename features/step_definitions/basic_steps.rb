@@ -1,9 +1,9 @@
 
-When("I visit the site") do
-    visit root_path
+When("I visit the {string}") do |page_path|
+    visit page_path
 end
 
-Then("I should be able to fill in {string} with {string}") do |string, string2|
+Then("I should be able to fill in {string} with {string}") do |field, content|
     pending # Write code here that turns the phrase above into concrete actions
 end
 

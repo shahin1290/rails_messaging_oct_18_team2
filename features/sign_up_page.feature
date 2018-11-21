@@ -5,8 +5,8 @@ Feature: Sign Up Page
     I want to be able to visit a sign up page and create an account
 
 Scenario: Submit sign up form
-    When I visit the site
-    Then I should be able to fill in "Name" with "Camron"
+    When I visit the "/users/sign_up"
+    Then I should be able to fill in "user[name]" with "Camron"
     And I should be able to fill in "Email" with "camron@heroku.com"
     And I should be able to fill in "Password" with "camron1234"
     And I should be able to fill in "Password confirmation" with "camron1234"
