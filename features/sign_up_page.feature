@@ -11,5 +11,5 @@ Scenario: Submit sign up form [Happy path]
     And I should be able to fill in "Password" with "camron1234"
     And I should be able to fill in "Password confirmation" with "camron1234"
     When I click "Create" to submit form
-    Then I should be redirected to "/" page
-    And I should see the message "Welcome! You have signed up successfully."
+    Then I should be redirected to "/welcome/index.:after" page
+    And I should see "Welcome! You have signed up successfully."
