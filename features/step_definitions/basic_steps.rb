@@ -11,8 +11,8 @@ When("I click {string} to submit form") do |value|
     click_on value
 end
   
-Then("I should be redirected to {string} page") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+Then("I should be redirected to {string} page") do |page_path|
+    visit page_path
 end
   
 Then("I should see the message {string}") do |string|
