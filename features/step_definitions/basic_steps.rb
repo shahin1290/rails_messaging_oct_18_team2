@@ -11,10 +11,6 @@ When("I click {string} to submit form") do |value|
     click_on value
 end
   
-Then("I should be redirected to {string} page") do |page_path|
-    visit page_path
-end
-  
 Then("I should see {string}") do |content|
     expect(page).to have_content content
 end
