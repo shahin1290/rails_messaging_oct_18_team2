@@ -16,5 +16,10 @@ Then("I should be redirected to {string} page") do |page_path|
 end
   
 Then("I should see {string}") do |content|
-    pending
+    expect(page).to have_content content
 end
+
+Then("Show me the page") do
+    save_and_open_page
+end
+  

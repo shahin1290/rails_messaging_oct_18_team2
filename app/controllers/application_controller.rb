@@ -21,5 +21,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+    # devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :password_confirmation])
   end
 end
+
+# Parameters: {"utf8"=>"✓", "authenticity_token"=>"uYYOloh9QjtWlZesefTM2LgA1agcsryV03wKOKbWeGvTeKxiLo/M7TpLwn5czsQPsFoRmeeVhcj+P9Pudn4I8g==", "user"=>{"name"=>"ssssssss", "email"=>"ssss@ddasd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create"}
+
