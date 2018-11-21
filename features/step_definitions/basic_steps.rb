@@ -4,7 +4,7 @@ When("I visit the {string}") do |page_path|
 end
 
 Then("I should be able to fill in {string} with {string}") do |field, content|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in field, with: 'content'
 end
 
 Then("I should be able to click {string} button to submit form") do |string|
