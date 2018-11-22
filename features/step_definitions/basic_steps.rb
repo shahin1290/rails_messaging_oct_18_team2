@@ -26,4 +26,8 @@ end
 Then("Show me the page") do
     save_and_open_page
 end
+
+When("I fill {string} with {string}") do |input_field, input_value|
+    fill_in input_field, with: input_value
+end
   

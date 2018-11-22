@@ -13,4 +13,14 @@ Scenario: Submit sign up form [Happy path]
     When I click "Create" to submit form
     And I should see "Welcome! You have signed up successfully."
 
+Scenario: Submit sign up form [Sad path]
+    When I visit the "sign up" page
+    And I fill "Name" with " "    
+    When I click "Create" to submit form
+    Then I should see "Name can't be blank"
+
+#     And I should fill in "Email" with "camron@heroku.com"
+#     And I should fill in "Password" with "camron1234"
+#     And I should fill in "Password confirmation" with "camron1234"
+
     
