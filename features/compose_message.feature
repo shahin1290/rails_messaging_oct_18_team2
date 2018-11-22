@@ -6,10 +6,9 @@ Feature: Compose message
 
 Background: Sign In to mailbox
     Given I navigate to the login page
-    When I submit <username> and <password>
+    When I submit "Johannaanden@hotmail.com" and "johannaanden"
     Then I should be logged in 
-    |username|password|
-    |Johannaanden@hotmail.com|johannaanden|
+
 
 Scenario: Composing a message
     Given I am on the "inbox" page

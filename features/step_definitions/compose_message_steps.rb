@@ -2,8 +2,10 @@ Given("I navigate to the login page") do
     visit user_session_path
 end
 
-When("I submit <username> and <password>") do
-    pending # Write code here that turns the phrase above into concrete actions
+When("I submit {string} and {string}") do |username,password|
+    fill_in 'Email', with: username 
+    fill_in 'Password', with: password
+    click_on 'Log in'
 end
 
 Then("I should be logged in") do |table|
