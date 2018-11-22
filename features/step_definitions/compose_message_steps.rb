@@ -4,7 +4,7 @@ Given("following users exists") do |table|
     end
 end
 
-Given(/^I am logged in as "([^"]*)"$/) do |name|
+Given('I am logged in as {string}') do |name|
   user = User.find_by(name: name)
   login_as(user, scope: :user)
 end
