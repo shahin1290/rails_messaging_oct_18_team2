@@ -9,15 +9,20 @@ Background:
     | Jenny  | jenny@ranom.com   | password | password              |
     | Daniel | daniel@random.com | password | password              |
 
+  Given the following email exists
+    | sender | receiver | body          | subject       |
+    | Daniel | Jenny    | some message  | some subject  |
+
 Scenario: Deleting a message
-  Given I am logged in as "Daniel"
-  And I am on the inbox page
-  And I send a mail to "Jenny"
-  And I click "Logout" 
+  # Given I am logged in as "Daniel"
+  # And I am on the inbox page
+  # And I send a mail to "Jenny"
+  # And I click "Logout" 
   Given I am logged in as "Jenny"
-  And I am on the home page
-  And I click "Inbox"
+  And I am on the inbox page
+  When I click "Inbox"
+  # And I am on the inbox page
   Then I should have "1" messages
-  And I click "View"
+  When I click "View"
   And I click "Move to trash"
   Then I should have "0" messages
