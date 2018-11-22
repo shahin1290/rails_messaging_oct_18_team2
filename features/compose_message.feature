@@ -20,4 +20,4 @@ Scenario: Composing a message
     And I fill in the "Subject" with "Hello"
     And I fill in the "conversation_body" with "World"
     When I click the "Message"
-    Then the message is sent
+    Then I see "Your message was successfully sent!"
