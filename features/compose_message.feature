@@ -11,7 +11,7 @@ Background:
         |Daniel|daniel@random.com|password|password|
 
 
-Scenario: Composing a message
+Scenario: Composing a message (Happy Path)
     Given I am logged in as "Jenny"
     And I am on the "inbox" page
     Then I see "Compose"
@@ -21,3 +21,13 @@ Scenario: Composing a message
     And I fill in the "conversation_body" with "World"
     When I click the "Message"
     Then I see "Your message was successfully sent!"
+
+Scenario: Composing a message (Sad Path)
+    Given I am logged in as "Jenny"
+    And I am on the "inbox" page
+    Then I see "Compose"
+    When I click on "Compose"
+    And I fill in the "Subject" with "Hello"
+    And I fill in the "conversation_body" with "World"
+    When I click the "Message"
+    Then I see "Please select a recipient!"
