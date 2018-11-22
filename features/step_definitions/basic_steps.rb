@@ -1,6 +1,4 @@
 
-# Sign Up feature
-
 When("I visit the {string} page") do |page_path|
     if page_path == 'sign up'
         visit new_user_registration_path
@@ -29,7 +27,6 @@ Then("Show me the page") do
     save_and_open_page
 end
 
-# Delete Message feature
 
 Given("following users exists") do |table|
     table.hashes.each do |user|
@@ -37,7 +34,7 @@ Given("following users exists") do |table|
     end
 end
   
-Given(/^I am logged in as "([^"]*)"$/) do |name|
+Given("I am logged in as {string}") do |name|
   @user = User.find_by(name: name)
   login_as(@user, scope: :user)
 end
@@ -46,7 +43,7 @@ Given("I am on the inbox page") do
     visit mailbox_inbox_path
 end
 
-Given(/^I send a mail to "([^"]*)"$/) do |name|
+Given("I send a mail to {string}") do |name|
     @receiver = User.find_by(name: name)
     @user.send_message(@receiver, 'Lorem ipsum...', 'Subject')
 end
@@ -55,7 +52,7 @@ Given("I am on the home page") do
     visit root_path
 end
 
-Then(/^I should have "([^"]*)" messages$/) do |expected_count|
+Then("I should have {string} messages") do |expected_count|
   count = @receiver.mailbox.inbox.count
   expect(count).to eq expected_count.to_i
 end
