@@ -1,9 +1,23 @@
+Given("I navigate to the login page") do
+    visit user_session_path
+end
+
+When("I submit <username> and <password>") do
+    pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should be logged in") do |table|
+    # table is a Cucumber::MultilineArgument::DataTable
+    pending # Write code here that turns the phrase above into concrete actions
+end
+
+
 Given("I am on the {string} page") do |value|
     visit mailbox_inbox_path
 end
 
-When("I click on {string} button") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+When("I click on {string}") do |value|
+    click_on value
 end
 
 When("I select {string} from the {string}") do |string, string2|
@@ -20,4 +34,8 @@ end
 
 Then("the message is sent") do
     pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I see {string}") do |string|
+    expect(page).to have_content(string) 
 end
