@@ -22,7 +22,7 @@ Scenario: Composing a message (Happy Path)
     When I click the "Message"
     Then I see "Your message was successfully sent!"
 
-Scenario: Composing a message (Sad Path)
+Scenario: Composing a message (Sad Path - No recipients)
     Given I am logged in as "Jenny"
     And I am on the "inbox" page
     Then I see "Compose"
@@ -31,3 +31,13 @@ Scenario: Composing a message (Sad Path)
     And I fill in the "conversation_body" with "World"
     When I click the "Message"
     Then I see "Please select a recipient!"
+
+Scenario: Composing a message (Sad Path - No subject)
+    Given I am logged in as "Jenny"
+    And I am on the "inbox" page
+    Then I see "Compose"
+    When I click on "Compose"
+    And I select "Daniel" from the "Recipients"
+    And I fill in the "conversation_body" with "World"
+    When I click the "Message"
+    Then I see "Please fill in a subject!"

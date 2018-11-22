@@ -10,6 +10,9 @@ class ConversationsController < ApplicationController
     if recipients == []
       flash[:error] = 'Please select a recipient!'
       render new_conversation_path
+    elsif conversation.nil?
+      flash[:error] = 'Please fill in a subject!'
+      render new_conversation_path
     else
       flash[:success] = 'Your message was successfully sent!'
       redirect_to conversation_path(conversation)
