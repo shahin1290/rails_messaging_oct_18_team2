@@ -24,6 +24,13 @@ end
 #    visit mailbox_inbox_path
 # end
 
+#from SC
+Given("following user exists") do |table|
+    table.hashes.each do |user|
+        FactoryBot.create(:user, user)
+    end
+end
+
 
 Given("I am on the {string} page") do |value|
     visit mailbox_inbox_path
