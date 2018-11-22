@@ -1,4 +1,6 @@
 
+# Sign Up feature
+
 When("I visit the {string} page") do |page_path|
     if page_path == 'sign up'
         visit new_user_registration_path
@@ -27,7 +29,7 @@ Then("Show me the page") do
     save_and_open_page
 end
 
-# Delete_Message_Feature
+# Delete Message feature
 
 Given("following users exists") do |table|
     table.hashes.each do |user|
@@ -57,9 +59,3 @@ Then(/^I should have "([^"]*)" messages$/) do |expected_count|
   count = @receiver.mailbox.inbox.count
   expect(count).to eq expected_count.to_i
 end
-
-Then("I click on the {string} link") do |string|
-pending # Write code here that turns the phrase above into concrete actions
-end
-  
-
