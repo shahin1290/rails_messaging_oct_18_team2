@@ -4,11 +4,13 @@ Feature: Sign Up Page
     I want to be able to visit a sign up page and create an account
 
 Scenario: Submit sign up form [Happy path]
-    When I visit the "sign in" page
+    When I visit the "sign up" page
     Then I should be able to fill in "Name" with "Camron"
     And I should be able to fill in "Email" with "camron@heroku.com"
     And I should be able to fill in "Password" with "camron1234"
     And I should be able to fill in "Password confirmation" with "camron1234"
+    Then I should see "Log in" link
     When I click "Create" to submit form
     And I should see "Welcome! You have signed up successfully."
+
     
