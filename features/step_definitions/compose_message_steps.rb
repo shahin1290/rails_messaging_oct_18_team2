@@ -25,8 +25,8 @@ When("I fill in the {string} with {string}") do |object, value|
     fill_in object, with: value
 end
 
-When("I click the {string} button") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+When("I click the {string}") do |value|
+    click_on value
 end
 
 Then("the message is sent") do
