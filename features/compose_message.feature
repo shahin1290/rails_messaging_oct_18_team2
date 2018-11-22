@@ -16,7 +16,7 @@ Scenario: Composing a message
     And I am on the "inbox" page
     Then I see "Compose"
     When I click on "Compose"
-    And I select "Benji" from the "Recipients"
+    And I select "Daniel" from the "Recipients"
     And I fill in the "Subject" with "Hello"
     And I fill in the "Message" with "World"
     When I click the "Send Message" button

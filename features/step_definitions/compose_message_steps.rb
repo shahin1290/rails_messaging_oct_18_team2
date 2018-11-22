@@ -17,8 +17,8 @@ When("I click on {string}") do |value|
     click_on value
 end
 
-When("I select {string} from the {string}") do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+When("I select {string} from the {string}") do |user, recipients|
+    select user, from: recipients
 end
 
 When("I fill in the {string} with {string}") do |string, string2|
