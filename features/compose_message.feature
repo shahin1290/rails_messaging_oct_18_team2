@@ -9,6 +9,12 @@ Background: Create a user
     |name|email|password|
     |Johanna|Johannaanden@hotmail.com|johannaanden|
 
+Background:
+    Given following users exists
+        |name   |email              |password   |password_confirmation |
+        |Jenny  |jenny@random.com   |password   |password               |
+        |Daniel|daniel@random.com|password|password|
+
 
 Scenario: Composing a message
     Given a user exists
