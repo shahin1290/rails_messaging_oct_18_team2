@@ -11,8 +11,9 @@ Background:
 
 Scenario: Deleting a message
   Given I am logged in as "Daniel"
+  And I am on the "inbox page"
   And I send a mail to "Jenny"
-  And I am on the "home page"
+  # And I am on the "home page"
   And I click on the "Logout" link
   Given I am logged-in as "Jenny"
   And I am on the "home page"
