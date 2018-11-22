@@ -40,7 +40,7 @@ Given(/^I am logged in as "([^"]*)"$/) do |name|
   login_as(@user, scope: :user)
 end
 
-Given("I am on the Inbox page") do
+Given("I am on the inbox page") do
     visit mailbox_inbox_path
 end
 
@@ -49,13 +49,13 @@ Given(/^I send a mail to "([^"]*)"$/) do |name|
     @user.send_message(@receiver, 'Lorem ipsum...', 'Subject')
 end
 
-# Given(/^I am logged in as "([^"]*)"$/) do |name|
-#     @user = User.find_by(name: name)
-#     login_as(@user, scope: :user)
-# end
+Given("I am on the home page") do
+    visit root_path
+end
 
-Then("I should have {string} messages") do |string|
-pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should have "([^"]*)" messages$/) do |expected_count|
+  count = @receiver.mailbox.inbox.count
+  expect(count).to eq expected_count.to_i
 end
 
 Then("I click on the {string} link") do |string|
