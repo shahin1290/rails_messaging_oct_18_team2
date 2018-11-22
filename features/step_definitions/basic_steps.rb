@@ -1,6 +1,10 @@
 
-When("I visit the {string}") do |page_path|
-    visit page_path
+When("I visit the {string} page") do |page_path|
+    if page_path == 'sign up'
+        visit new_user_registration_path
+    else
+        return false
+    end
 end
 
 Then("I should be able to fill in {string} with {string}") do |input_field, input_value|
