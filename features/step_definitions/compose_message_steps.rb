@@ -1,6 +1,13 @@
+user = FactoryBot.create(:user)
+  
+Given("a user exists") do
+    expect(user).to be_valid
+end
+
 Given(/^I am logged in as "([^"]*)"$/) do |name|
   user = User.find_by(name: name)
-  login_as(user, scope: :user)
+  expect(user).to be_valid
+#   login_as(user, scope: :user)
 end
 
 # Given("I navigate to the login page") do
