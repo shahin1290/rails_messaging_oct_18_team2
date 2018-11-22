@@ -13,15 +13,21 @@ Scenario: Submit sign up form [Happy path]
     When I click "Create" to submit form
     And I should see "Welcome! You have signed up successfully."
 
-Scenario: Submit sign up form [Sad path]
+Scenario: Submit sign up form without name [Sad path]
     When I visit the "sign up" page
     And I fill "Name" with " "    
+    When I click "Create" to submit form
+    Then I should see "Name can't be blank"
+
+Scenario: Submit sign up form without email [Sad path]
+    When I visit the "sign up" page
     And I fill "Email" with " "
-    And I fill "Password" with " "
-    And I fill "Password confirmation" with " "
     When I click "Create" to submit form
     Then I should see "Email can't be blank"
+ 
+Scenario: Submit sign up form without password [Sad path]
+    When I visit the "sign up" page
+    And I fill "Password" with " "
+    When I click "Create" to submit form
     Then I should see "Password can't be blank"
-    # Then I should see "Password confirmation doesn't match Password"
 
-    
