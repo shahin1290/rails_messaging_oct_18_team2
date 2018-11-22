@@ -1,17 +1,21 @@
-Given("I navigate to the login page") do
-    visit user_session_path
+Given(/^I am logged in as "([^"]*)"$/) do |name|
+  user = User.find_by(name: name)
+  login_as(user, scope: :user)
 end
 
-When("I submit {string} and {string}") do |username,password|
-    fill_in 'Email', with: username 
-    fill_in 'Password', with: password
-    click_on 'Log in'
-end
+# Given("I navigate to the login page") do
+#    visit new_user_session_path
+# end
 
-Then("I should be logged in") do |table|
-    # table is a Cucumber::MultilineArgument::DataTable
-    pending # Write code here that turns the phrase above into concrete actions
-end
+# When("I submit {string} and {string}") do |username,password|
+#    fill_in 'Email', with: username 
+#    fill_in 'Password', with: password
+#    click_on 'Log in'
+# end
+
+# Then("I should be logged in") do
+#    visit mailbox_inbox_path
+# end
 
 
 Given("I am on the {string} page") do |value|
