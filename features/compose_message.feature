@@ -4,21 +4,15 @@ Feature: Compose message
     In order to send a message to someone
     I want to be able to compose a message
 
-Background: Create a user
-    Given the following users exist
-    |name|email|password|
-    |Johanna|Johannaanden@hotmail.com|johannaanden|
-
 Background:
     Given following users exists
         |name   |email              |password   |password_confirmation |
-        |Jenny  |jenny@random.com   |password   |password               |
+        |Jenny  |jenny@random.com|password   |password               |
         |Daniel|daniel@random.com|password|password|
 
 
 Scenario: Composing a message
-    Given a user exists
-    Given I am logged in as "Johanna"
+    Given I am logged in as "Jenny"
     And I am on the "inbox" page
     Then I see "Compose"
     When I click on "Compose"

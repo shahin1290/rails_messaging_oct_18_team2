@@ -1,36 +1,16 @@
-user = FactoryBot.create(:user)
-  
-Given("a user exists") do
-    expect(user).to be_valid
-end
-
-Given(/^I am logged in as "([^"]*)"$/) do |name|
-  user = User.find_by(name: name)
-  expect(user).to be_valid
-#   login_as(user, scope: :user)
-end
-
-# Given("I navigate to the login page") do
-#    visit new_user_session_path
-# end
-
-# When("I submit {string} and {string}") do |username,password|
-#    fill_in 'Email', with: username 
-#    fill_in 'Password', with: password
-#    click_on 'Log in'
-# end
-
-# Then("I should be logged in") do
-#    visit mailbox_inbox_path
-# end
-
-#from SC
-Given("following user exists") do |table|
+Given("following users exists") do |table|
     table.hashes.each do |user|
         FactoryBot.create(:user, user)
     end
 end
 
+Given("a user exists") do
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Given("I am logged in as {string}") do |string|
+    pending # Write code here that turns the phrase above into concrete actions
+  end
 
 Given("I am on the {string} page") do |value|
     visit mailbox_inbox_path
