@@ -1,5 +1,5 @@
-Given("I am on the {string} page") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+Given("I am on the {string} page") do |value|
+    visit mailbox_inbox_path
 end
 
 When("I click on {string} button") do |string|
