@@ -18,6 +18,6 @@ Scenario: Composing a message
     When I click on "Compose"
     And I select "Daniel" from the "Recipients"
     And I fill in the "Subject" with "Hello"
-    And I fill in the "Message" with "World"
+    And I fill in the "conversation_body" with "World"
     When I click the "Send Message" button
     Then the message is sent
