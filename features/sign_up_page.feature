@@ -16,11 +16,12 @@ Scenario: Submit sign up form [Happy path]
 Scenario: Submit sign up form [Sad path]
     When I visit the "sign up" page
     And I fill "Name" with " "    
+    And I fill "Email" with " "
+    And I fill "Password" with " "
+    And I fill "Password confirmation" with " "
     When I click "Create" to submit form
-    Then I should see "Name can't be blank"
-
-#     And I should fill in "Email" with "camron@heroku.com"
-#     And I should fill in "Password" with "camron1234"
-#     And I should fill in "Password confirmation" with "camron1234"
+    Then I should see "Email can't be blank"
+    Then I should see "Password can't be blank"
+    # Then I should see "Password confirmation doesn't match Password"
 
     
