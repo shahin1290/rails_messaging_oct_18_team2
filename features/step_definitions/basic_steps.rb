@@ -7,7 +7,7 @@ When("I visit the {string} page") do |page_path|
     end
 end
 
-Then("I should be able to fill in {string} with {string}") do |input_field, input_value|
+Then("I fill in {string} with {string}") do |input_field, input_value|
     fill_in input_field, with: input_value
 end
 
@@ -27,7 +27,3 @@ Then("Show me the page") do
     save_and_open_page
 end
 
-When("I fill {string} with {string}") do |input_field, input_value|
-    fill_in input_field, with: input_value
-end
-  
