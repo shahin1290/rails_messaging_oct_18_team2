@@ -11,7 +11,7 @@ Then("I fill in {string} with {string}") do |input_field, input_value|
     fill_in input_field, with: input_value
 end
 
-When("I click {string} to submit form") do |value|
+When("I click {string}") do |value|
     click_on value
 end
 
@@ -49,13 +49,10 @@ Given(/^I send a mail to "([^"]*)"$/) do |name|
     @user.send_message(@receiver, 'Lorem ipsum...', 'Subject')
 end
 
-Given("I click on the {string} link") do |string|
-pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given("I am logged-in as {string}") do |string|
-pending # Write code here that turns the phrase above into concrete actions
-end
+# Given(/^I am logged in as "([^"]*)"$/) do |name|
+#     @user = User.find_by(name: name)
+#     login_as(@user, scope: :user)
+# end
 
 Then("I should have {string} messages") do |string|
 pending # Write code here that turns the phrase above into concrete actions
