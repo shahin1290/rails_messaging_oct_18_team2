@@ -17,10 +17,6 @@ end
 When("I click {string}") do |value|
     click_on value
 end
-
-Then("I should see {string} link") do |value|
-    expect(page).to have_content value
-end
   
 Then("I should see {string}") do |content|
     expect(page).to have_content content

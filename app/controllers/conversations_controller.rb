@@ -7,8 +7,16 @@ class ConversationsController < ApplicationController
   def create
     recipients = User.where(id: conversation_params[:recipients])
     conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
-    flash[:success] = 'Your message was successfully sent!'
-    redirect_to conversation_path(conversation)
+    if recipients == []
+      flash[:error] = 'Please select a recipient!'
+      render new_conversation_path
+    elsif conversation.nil?
+      flash[:error] = 'Please fill in a subject!'
+      render new_conversation_path
+    else
+      flash[:success] = 'Your message was successfully sent!'
+      redirect_to conversation_path(conversation)
+    end
   end
 
   def show
@@ -42,5 +50,4 @@ class ConversationsController < ApplicationController
   def message_params
     params.require(:message).permit(:body, :subject)
   end
-
 end
