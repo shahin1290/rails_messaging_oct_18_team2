@@ -13,22 +13,6 @@ Given("I am on the {string} page") do |value|
     visit mailbox_inbox_path
 end
 
-When("I click on {string}") do |value|
-    click_on value
-end
-
 When("I select {string} from the {string}") do |user, recipients|
     select user, from: recipients
-end
-
-When("I fill in the {string} with {string}") do |object, value|
-    fill_in object, with: value
-end
-
-When("I click the {string}") do |value|
-    click_on value
-end
-
-Then("I see {string}") do |string|
-    expect(page).to have_content(string) 
 end
