@@ -10,7 +10,7 @@ Background:
         |Jenny  |jenny@random.com |password |password              |
         |Daniel |daniel@random.com|password |password              |
     And I am logged in as "Jenny"
-    And I am on inbox page 
+    And I am on the "inbox" page 
 
 Scenario: Composing a message (Happy Path)
     When I click "Compose"
