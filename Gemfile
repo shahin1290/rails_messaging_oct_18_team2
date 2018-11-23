@@ -30,6 +30,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'  
 end
 
 group :production do

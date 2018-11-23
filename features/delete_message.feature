@@ -1,3 +1,4 @@
+@javascript
 Feature: Delete Message from inbox
     As a user
     In order to remove messages from my inbox
@@ -14,15 +15,12 @@ Background:
     | Daniel | Jenny    | some message  | some subject  |
 
 Scenario: Deleting a message
-  # Given I am logged in as "Daniel"
-  # And I am on the inbox page
-  # And I send a mail to "Jenny"
-  # And I click "Logout" 
   Given I am logged in as "Jenny"
-  And I am on the inbox page
+  And I am on the "inbox" page
   When I click "Inbox"
-  # And I am on the inbox page
   Then I should have "1" messages
   When I click "View"
   And I click "Move to trash"
+  And I click to accept the allert message 
+  And I am on the "inbox" page
   Then I should have "0" messages

@@ -1,8 +1,11 @@
 
-When("I visit the {string} page") do |page_path|
-    if page_path == 'sign up'
+When("I am on the {string} page") do |page_path|
+    case page_path 
+    when 'sign up'
         visit new_user_registration_path
-    else
+    when 'inbox'
+        visit mailbox_inbox_path
+    else 
         return false
     end
 end
@@ -41,9 +44,10 @@ Given("I am logged in as {string}") do |name|
     user = User.find_by(name: name)
     login_as user, scope: :user
 end
- 
-Given("I am on the inbox page") do
-    visit mailbox_inbox_path
+
+When("I click to accept the allert message") do
+    alert = page.driver.browser.switch_to.alert
+    alert.accept
 end
 
 Then("I should have {string} messages") do |expected_count|
