@@ -1,4 +1,4 @@
-Given("following users exists") do |table|
+Given('following users exists') do |table|
     table.hashes.each do |user|
         FactoryBot.create(:user, user)
     end
@@ -9,10 +9,10 @@ Given('I am logged in as {string}') do |name|
   login_as(user, scope: :user)
 end
 
-Given("I am on the {string} page") do |value|
+Given('I am on inbox page') do
     visit mailbox_inbox_path
 end
 
-When("I select {string} from the {string}") do |user, recipients|
+When('I select {string} from the {string}') do |user, recipients|
     select user, from: recipients
 end
