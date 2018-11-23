@@ -53,3 +53,4 @@ end
 When('I select {string} from the {string}') do |user, recipients|
     select user, from: recipients
 end
+
