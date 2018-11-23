@@ -1,4 +1,3 @@
-@javascript
 Feature: Reply to message
   As a user
   In order to send a response
