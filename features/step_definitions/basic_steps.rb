@@ -1,4 +1,3 @@
-
 When("I am on the {string} page") do |page_path|
     case page_path 
     when 'sign up'
@@ -51,3 +50,6 @@ Then("I should have {string} messages") do |expected_count|
   expect(count).to eq expected_count.to_i
 end
 
+When('I select {string} from the {string}') do |user, recipients|
+    select user, from: recipients
+end
