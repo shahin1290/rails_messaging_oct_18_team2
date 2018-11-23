@@ -21,6 +21,6 @@ Scenario: Deleting a message
   Then I should have "1" messages
   When I click "View"
   And I click "Move to trash"
-  And I click to accept the allert message 
+  And I click to accept the alert message 
   And I am on the "inbox" page
   Then I should have "0" messages

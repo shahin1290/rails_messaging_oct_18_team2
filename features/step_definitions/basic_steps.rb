@@ -41,7 +41,7 @@ Given("I am logged in as {string}") do |name|
     login_as user, scope: :user
 end
 
-When("I click to accept the allert message") do
+When("I click to accept the alert message") do
     alert = page.driver.browser.switch_to.alert
     alert.accept
 end
