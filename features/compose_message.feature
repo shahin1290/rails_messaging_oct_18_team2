@@ -17,19 +17,19 @@ Scenario: Composing a message (Happy Path)
     And I select "Daniel" from the "Recipients"
     And I fill in "Subject" with "Hello"
     And I fill in "conversation_body" with "World"
-    When I click "Message"
+    And I click "Message"
     Then I should see "Your message was successfully sent!"
 
 Scenario: Composing a message (Sad Path - No recipients)
     When I click "Compose"
     And I fill in "Subject" with "Hello"
     And I fill in "conversation_body" with "World"
-    When I click "Message"
+    And I click "Message"
     Then I should see "Please select a recipient!"
 
 Scenario: Composing a message (Sad Path - No subject)
     When I click "Compose"
     And I select "Daniel" from the "Recipients"
     And I fill in "conversation_body" with "World"
-    When I click "Message"
+    And I click "Message"
     Then I should see "Please fill in a subject!"
