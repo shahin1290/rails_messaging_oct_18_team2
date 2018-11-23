@@ -8,11 +8,9 @@ Background: Email exists in inbox
     | name   | email             | password | password_confirmation |
     | Jenny  | jenny@ranom.com   | password | password              |
     | Daniel | daniel@random.com | password | password              |
-  
   And the following email exists
     | sender | receiver | body          | subject       |
     | Daniel | Jenny    | some message  | some subject  |
-
   And I am logged in as "Jenny"
   And I am on the "inbox" page
 
