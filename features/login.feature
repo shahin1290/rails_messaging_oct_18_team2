@@ -22,7 +22,7 @@ Scenario: Login to the application incorrect email [Sad path]
     Then I should see 'Invalid Email or password'
 
 Scenario: Login to the application with incorrect password [Sad path]
-    When I fill in 'Email' with 'jone@email.com'
+    When I fill in 'Email' with 'jenny@random.com'
     And I fill in 'Password' with 'menny1290'
     And I click 'Log in'
     Then I should see 'Invalid Email or password'
