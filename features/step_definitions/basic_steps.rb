@@ -3,8 +3,10 @@ When("I am on the {string} page") do |page_path|
     when 'sign up'
         visit new_user_registration_path
     when 'inbox'
-        visit mailbox_inbox_path
-    else 
+        visit mailbox_inbox_path 
+    when 'login'
+        visit new_user_session_path
+    else
         return false
     end
 end
